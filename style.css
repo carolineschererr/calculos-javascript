@@ -1,0 +1,10 @@
+button {
+    background-color: blue;
+    color: beige;
+    font-weight: bold;
+}
+
+#contractForm {
+    border: 50px;
+    align-items: center;
+}

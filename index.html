@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulário de Contrato</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javascript.js"type="module" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="contractForm">
+        <div>
+            <label for="numeroContrato">Número do Contrato:</label>
+            <input type="text" id="numeroContrato" name="numeroContrato" pattern="[0-9]{7}" required>
+        </div>
+        <div>
+            <label for="codCliente">Código do Cliente:</label>
+            <select id="codCliente" name="codCliente" required>
+                <option value="">Selecione um cliente</option>
+                <option value="123">123 - João Silva</option>
+                <option value="456">456 - Maria Souza</option>
+                <option value="789">789 - Pedro Santos</option>
+            </select>
+        </div>
+        <div>
+            <label for="valorFinanciado">Valor Financiado:</label>
+            <input type="number" id="valorFinanciado" name="valorFinanciado" min="1000" required>
+        </div>
+        <div>
+            <label for="quantidadeParcelas">Quantidade de Parcelas:</label>
+            <select id="quantidadeParcelas" name="quantidadeParcelas" required>
+                <option value="">Selecione a quantidade de parcelas</option>
+                <option value="1">1 Parcela</option>
+                <option value="12">12 Parcelas</option>
+                <option value="24">24 Parcelas</option>
+                <option value="48">48 Parcelas</option>
+                <option value="96">96 Parcelas</option>
+            </select>
+        </div>
+        <div>
+            <label for="txFinanciamento">Taxa de Financiamento:</label>
+            <span id="txFinanciamento">1,1% a.m.</span>
+        </div>
+        <div>
+            <label for="valorParcela">Valor da Parcela:</label>
+            <span id="valorParcela"></span>
+        </div>
+        <div>
+            <label for="situacaoContrato">Situação do Contrato:</label>
+            <select id="situacaoContrato" name="situacaoContrato" required>
+                <option value="">Selecione a situação do contrato</option>
+                <option value="1">Solicitado</option>
+                <option value="2">Contratado</option>
+                <option value="3">Encerrado</option>
+            </select>
+        </div>
+        <div>
+            <label for="dataInicio">Data de Início:</label>
+            <input type="date" id="dataInicio" name="dataInicio" required>
+        </div>
+        <div>
+            <label for="dataFim">Data de Fim:</label>
+            <input type="date" id="dataFim" name="dataFim" required>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>
