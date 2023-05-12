@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Formulário de Contrato</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="javascript.js"type="module" defer></script>
+    <script src="javascript.js" type="module" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,7 +26,7 @@
         </div>
         <div>
             <label for="valorFinanciado">Valor Financiado:</label>
-            <input type="number" id="valorFinanciado" name="valorFinanciado" min="1000" required>
+            <input type="number" id="valorFinanciado" name="valorFinanciado" min="100" required>
         </div>
         <div>
             <label for="quantidadeParcelas">Quantidade de Parcelas:</label>
@@ -58,14 +58,52 @@
         </div>
         <div>
             <label for="dataInicio">Data de Início:</label>
-            <input type="date" id="dataInicio" name="dataInicio" required>
+            <input type="date" id="dataInicio" name="dataInicio">
         </div>
         <div>
             <label for="dataFim">Data de Fim:</label>
-            <input type="date" id="dataFim" name="dataFim" required>
+            <input type="date" id="dataFim" name="dataFim">
         </div>
         <button type="submit">Enviar</button>
     </form>
+
+    <textarea>
+        Nota: é muito importante que se faça empréstimos com boas taxas.
+    div class="container">
+        div class="coluna">
+            select id="cboCliente" value="{@cod_cliente}" formatar="classeJS.formatarCbo">/select>
+            clone retornolista.linha value="{@cod_cliente},{@tipo_pessoa}" html="{@cod_cliente_formatado} - {@nome_cliente}">
+        /div>
+    /div>
+
+    formatarCbo: function(dados){
+        if(dados.tipo_pessoa == 'F'){
+            dados.cod_cliente_formatado = 'formatacao de cpf. dar substring(2)';
+        } 
+        else if(dados.tipo_pessoa == 'J'){
+            dados.cod_cliente_formatado = 'formatacao de cnpj';
+        }
+    },
+    
+    clicarIncluir:function(){
+        if(!/*coisas do sistema*/){
+            return false;
+        }
+    
+        var parms = /*sistema*/ 'parametros';
+        parms.num_contrato = $('#txtNumContrato').val().trim();
+        // lero lero
+    
+        var array = $('#cboCliente').val().split(','); //porque é o que tem em value
+        parms.cod_cliente = array[0];
+        if(array[1] == 'F'){
+            parms.tipo_pessoa = 'F';
+        } else if(array[1] == 'J'){
+            parms.tipo_pessoa = 'J';
+        }
+        //continua a função
+    }
+</textarea>
 </body>
 
 </html>
