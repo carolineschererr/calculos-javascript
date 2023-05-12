@@ -102,6 +102,21 @@
             parms.tipo_pessoa = 'J';
         }
         //continua a função
+
+        //para alterar
+        div>
+            label for="txtCadastroCodCliente">Cliente\label>
+            select value="{@cbo_cliente}" outros atributos >
+                option value="{@cod_cliente},{@tipo_pessoa}" html={@cod_cliente} - {@nome_cliente}" outros atributos>
+        /div>
+        
+        no js:
+        
+        TratarRetornoBoxDadosObter: function (oJson) {
+           ...
+           cbo_cliente: Json.Dados.registroUsuario.cod_cliente + ',' + Json.Dados.registroUsuario.tipo_pessoa,
+           ...
+        }
     }
 </textarea>
 </body>
